@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 
 const Championships = () => {
   return (
-    <Box></Box>
+    <Box>Campeonatos</Box>
   );
 };
 

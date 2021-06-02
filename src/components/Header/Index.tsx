@@ -4,9 +4,9 @@ import Menu from "./Menu";
 import TextLogo from "./TextLogo";
 
 const dataMenu = [
-  { label: 'Menu 1', link: '#' },
-  { label: 'Menu 2', link: '#' },
-  { label: 'Menu 3', link: '#' },
+  { label: 'Menu 1', link: '1' },
+  { label: 'Menu 2', link: '2' },
+  { label: 'Menu 3', link: '3' },
 ];
 
 const Header = () => {
