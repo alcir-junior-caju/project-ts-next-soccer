@@ -16,7 +16,7 @@ const Breadcrumb = ({ breadcrumbs }: Breadcrumbs) => {
   return (
     <BreadcrumbChakra mb={4} spacing={2} separator={<ChevronRightIcon />}>
       {breadcrumbs.map(breadcrumb => (
-        <BreadcrumbItem key={breadcrumb.link} isCurrent={breadcrumb.current}>
+        <BreadcrumbItem key={breadcrumb.link} isCurrentPage={breadcrumb.current}>
           <Link href={breadcrumb.link} passHref>
             <BreadcrumbLink>
               {breadcrumb.label}
