@@ -1,4 +1,5 @@
 import { Badge, Box, Image, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react";
+import Link from 'next/link';
 
 type Championship = {
   campeonato_id: number;
@@ -6,7 +7,6 @@ type Championship = {
   nome: string;
   nome_popular: string;
   rodada_atual: {
-    rodada: number;
     nome: string;
   },
   slug: string;
@@ -33,23 +33,30 @@ const Championships = ({ championships }: ChampionshipsProps) => {
           color={color}
           key={championship.campeonato_id}
         >
-          <Image src={championship.logo} alt={championship.nome_popular} />
-          <Box p={6}>
-            <Box d="flex" alignItems="baseline">
-              <Badge variant="outline" borderRadius="full" px={2} colorScheme="teal">
-                {championship.rodada_atual.nome}
-              </Badge>
-            </Box>
-            <Text
-              fontWeight="semibold"
-              letterSpacing="wide"
-              fontSize="xs"
-              textTransform="uppercase"
-              mt={2}
-            >
-              {championship.nome}
-            </Text>
-          </Box>
+          <Link href={`/championships/${championship.slug}`}>
+            <a>
+              <Image src={championship.logo} alt={championship.nome_popular} />
+              <Box p={6}>
+                <Box d="flex" alignItems="baseline">
+                  <Badge variant="outline" borderRadius="full" px={2} colorScheme="teal">
+                    {championship.rodada_atual.nome}
+                  </Badge>
+                  <Badge variant="outline" borderRadius="full" px={2} ml={2} colorScheme="pink">
+                    {championship.status}
+                  </Badge>
+                </Box>
+                <Text
+                  fontWeight="semibold"
+                  letterSpacing="wide"
+                  fontSize="xs"
+                  textTransform="uppercase"
+                  mt={2}
+                >
+                  {championship.nome}
+                </Text>
+              </Box>
+            </a>
+          </Link>
         </Box>
       )))}
     </SimpleGrid>
