@@ -33,7 +33,7 @@ const Championships = ({ championships }: ChampionshipsProps) => {
           color={color}
           key={championship.campeonato_id}
         >
-          <Link href={`/championships/${championship.slug}`}>
+          <Link href={`/championships/${championship.campeonato_id}/${championship.slug}`}>
             <a>
               <Image src={championship.logo} alt={championship.nome_popular} />
               <Box p={6}>

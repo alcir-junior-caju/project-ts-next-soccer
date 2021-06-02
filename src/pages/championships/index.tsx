@@ -6,8 +6,8 @@ import api from "../../services/api";
 import Breadcrumb from "../../components/Breadcrumb";
 
 const breadcrumbs = [
-  { label: 'Home', link: '/' },
-  { label: 'Campeonatos', link: '/championships' },
+  { label: 'Home', link: '/', current: false },
+  { label: 'Campeonatos', link: '/championships', current: true },
 ];
 
 const Championships = ({ championships }) => {

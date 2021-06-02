@@ -5,6 +5,7 @@ import Link from 'next/link';
 type BreadcrumbLink = {
   label: string;
   link: string;
+  current: boolean;
 };
 
 interface Breadcrumbs {
@@ -15,7 +16,7 @@ const Breadcrumb = ({ breadcrumbs }: Breadcrumbs) => {
   return (
     <BreadcrumbChakra mb={4} spacing={2} separator={<ChevronRightIcon />}>
       {breadcrumbs.map(breadcrumb => (
-        <BreadcrumbItem key={breadcrumb.link}>
+        <BreadcrumbItem key={breadcrumb.link} isCurrent={breadcrumb.current}>
           <Link href={breadcrumb.link} passHref>
             <BreadcrumbLink>
               {breadcrumb.label}

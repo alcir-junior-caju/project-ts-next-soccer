@@ -6,7 +6,7 @@ import Header from "../components/Header/Index";
 import api from "../services/api";
 
 const breadcrumbs = [
-  { label: 'Home', link: '/' }
+  { label: 'Home', link: '/', current: true }
 ];
 
 const Home = ({ championships }) => {
