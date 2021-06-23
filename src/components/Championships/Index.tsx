@@ -35,13 +35,15 @@ const Championships = ({ championships }: ChampionshipsProps) => {
         >
           <Link href={`/championships/${championship.campeonato_id}/${championship.slug}`}>
             <a>
-              <Image src={championship.logo} alt={championship.nome_popular} />
+              <Image src={championship.logo} alt={championship.nome_popular} p={2} mx="auto" />
               <Box p={6}>
                 <Box d="flex" alignItems="baseline">
-                  <Badge variant="outline" borderRadius="full" px={2} colorScheme="teal">
-                    {championship.rodada_atual.nome}
-                  </Badge>
-                  <Badge variant="outline" borderRadius="full" px={2} ml={2} colorScheme="pink">
+                  {championship.rodada_atual?.nome && (
+                    <Badge variant="outline" borderRadius="full" px={2} mr={2} colorScheme="teal">
+                      {championship.rodada_atual?.nome}
+                    </Badge>
+                  )}
+                  <Badge variant="outline" borderRadius="full" px={2} colorScheme="pink">
                     {championship.status}
                   </Badge>
                 </Box>

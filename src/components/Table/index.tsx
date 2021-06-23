@@ -1,3 +1,4 @@
+import { CheckCircleIcon, InfoIcon, WarningIcon } from "@chakra-ui/icons";
 import {
   Table as TableChakra,
   Thead,
@@ -10,6 +11,7 @@ import {
   Tooltip,
   Text,
   Flex,
+  Icon,
 } from "@chakra-ui/react";
 
 type tableData = {
@@ -95,18 +97,21 @@ const Table = ({ source, name }: TableProps) => {
             <Td isNumeric>{table.gols_contra}</Td>
             <Td isNumeric>{table.saldo_gols}</Td>
             <Td isNumeric>{table.aproveitamento}</Td>
-            <Td isNumeric>
-              <Flex>
-                {table.ultimos_jogos.map(jogo => {
+            <Td>
+              <div>
+                {table.ultimos_jogos.map((jogo, index) => {
                   if (jogo === 'v') {
-                    return <Text as="span" fontSize={60} color="green.500">.</Text>
+                    return <Icon as={CheckCircleIcon} color="green.500" fontSize={14} m={0.5} />
+                    // return <Text key={index} as="strong" fontSize={60} color="green.500">.</Text>
                   } else if (jogo === 'e') {
-                    return <Text as="span" fontSize={60} color="gray.500">.</Text>
+                    return <Icon as={InfoIcon} color="gray.500" fontSize={14} m={0.5} />
+                    // return <Text key={index} as="strong" fontSize={60} color="gray.500">.</Text>
                   } else if (jogo === 'd') {
-                    return <Text as="span" fontSize={60} color="red.500">.</Text>
+                    return <Icon as={WarningIcon} color="red.500" fontSize={14} m={0.5} />
+                    // return <Text key={index} as="strong" fontSize={60} color="red.500">.</Text>
                   }
                 })}
-              </Flex>
+              </div>
             </Td>
           </Tr>
         ))}
